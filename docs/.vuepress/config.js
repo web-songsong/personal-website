@@ -1,6 +1,15 @@
 const fs = require('fs')
 const path = require('path')
 
+module.exports = {
+  title: 'charmingsong',
+  head: [['link', { rel: 'icon', href: '/logo.png' }]],
+  themeConfig: {
+    nav: navFn(path.join(__dirname, '../')),
+    displayAllHeaders: true,
+    sidebar: 'auto'
+  }
+}
 function navFn(pwd) {
   const arr = fs.readdirSync(pwd).map(item => {
     const item_pwd = path.join(pwd, item)
@@ -32,12 +41,4 @@ function navFn(pwd) {
     item ? '' : arr.splice(key, 1)
   })
   return arr
-}
-module.exports = {
-  title: 'charmingsong',
-  themeConfig: {
-    nav: navFn(path.join(__dirname, '../')),
-    displayAllHeaders: true,
-    sidebar: 'auto'
-  }
 }
