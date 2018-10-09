@@ -1,21 +1,16 @@
 <template>
-  <div class="Blog">
-    this Blog
-    <div class="test"></div>
+  <div class="home">
+    <a href="#/blog">blog</a>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-
 export default {
   name: 'home',
-  components: {}
+  components: {
+  }
 }
 </script>
 <style lang="stylus" scoped>
-.test
-  width $width
-  height r(300)
-  background red
 </style>
