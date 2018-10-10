@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <a href="#/blog">blog</a>
+    <a href="#/blog">b</a>
   </div>
 </template>
 
