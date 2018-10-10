@@ -8,10 +8,12 @@ router.post('/docs', postDocs)
 module.exports = router
 
 async function postDocs(ctx) {
-  console.log(ctx.request.header['user-agent'])
   if (!/GitHub/g.test(ctx.request.header['user-agent'])) {
     return (ctx.body = 'false')
   }
+  ctx.body = '收到push请求了'
   const { stdout, stderr } = await exec(str, { shell: '/bin/zsh' })
-  ctx.body = stderr ? stderr : stdout
+  console.log('======================')
+  console.log(ctx.request.header['user-agent'])
+  console.log(stderr ? stderr : stdout)
 }
