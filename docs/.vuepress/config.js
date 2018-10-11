@@ -1,12 +1,23 @@
 const fs = require('fs')
 const path = require('path')
-
 module.exports = {
   dest: '../blog',
   // base: '/blog/',
   title: 'charmingsong',
   description: 'charmingsong blog',
-  head: [['link', { rel: 'icon', href: `/ico/favicon.ico` }]],
+  head: [
+    ['link', { rel: 'icon', href: `/ico/favicon.ico` }],
+    ['meta', { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' }],
+    [
+      'meta',
+      {
+        name: 'viewport',
+        content:
+          'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;'
+          
+      }
+    ]
+  ],
   themeConfig: {
     nav: navFn(path.join(__dirname, '../')),
     displayAllHeaders: true,
@@ -14,34 +25,35 @@ module.exports = {
   }
 }
 function navFn(pwd) {
-  const arr = fs.readdirSync(pwd).map(item => {
-    const item_pwd = path.join(pwd, item)
-    if (/^[^.]/.test(item)) {
-      if (fs.statSync(item_pwd).isDirectory()) {
-        return {
-          text: `${item.replace(/(\.\w*)/g, '')}`,
-          items: navFn(item_pwd)
-        }
-      } else {
-        return {
-          text: `${
-            item === 'README.md' ? 'home' : item.replace(/(\.\w*)/g, '')
-          }`,
-          link: `/${
-            item !== 'README.md'
-              ? item_pwd
-                  .replace(path.join(__dirname, '../'), '')
-                  .replace(/(\.\w*)/g, '.html')
-              : item_pwd
-                  .replace(path.join(__dirname, '../'), '')
-                  .replace('README.md', '')
-          }`
+  const arr = []
+  fs.readdirSync(pwd)
+    .map(item => {
+      const item_pwd = path.join(pwd, item)
+      if (/^[^.]/.test(item)) {
+        if (fs.statSync(item_pwd).isDirectory()) {
+          return {
+            // text: `${item.replace(/(\.\w*)/g, '')}`,
+            text: item,
+            items: navFn(item_pwd)
+          }
+        } else {
+          return {
+            text: `${
+              item === 'README.md' ? 'home' : item.replace(/(\.\w*)/g, '')
+            }`,
+            link: `/${
+              item !== 'README.md'
+                ? item_pwd
+                    .replace(path.join(__dirname, '../'), '')
+                    .replace(/(\.\w*)/g, '.html')
+                : item_pwd
+                    .replace(path.join(__dirname, '../'), '')
+                    .replace('README.md', '')
+            }`
+          }
         }
       }
-    }
-  })
-  arr.forEach((item, key, arr) => {
-    item ? '' : arr.splice(key, 1)
-  })
+    })
+    .forEach(item => (item ? arr.push(item) : ''))
   return arr
 }
