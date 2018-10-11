@@ -42,6 +42,7 @@ export default {
 
 <style lang="stylus" scoped>
 .hideShow
+  margin-bottom 3.5rem
   .example
     overflow hidden
     // transform-origin 0 0
