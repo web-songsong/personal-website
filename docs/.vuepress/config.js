@@ -3,8 +3,8 @@ const path = require('path')
 module.exports = {
   dest: '../blog',
   // base: '/blog/',
-  title: 'charmingsong',
-  description: 'charmingsong blog',
+  title: 'charmingsong blog',
+  description: '会做前端和做好前端是两回事',
   head: [
     ['link', { rel: 'icon', href: `/ico/favicon.ico` }],
     ['meta', { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' }],
