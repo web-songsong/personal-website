@@ -1,7 +1,7 @@
 const router = require('koa-router')()
 const exec = require('util').promisify(require('child_process').exec)
 
-const strs = ['git pull', 'yarn docs:build']
+const strs = ['git pull', 'yarn docs:build', 'yarn build']
 const str = strs.join('&&')
 
 router.post('/docs', postDocs)
