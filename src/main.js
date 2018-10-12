@@ -6,7 +6,7 @@ import store from './store'
 Vue.config.productionTip = false
 
 router.beforeEach((to, from, next) => {
-  to.path === '/' ? next('/blog') : next()
+  location.href = 'https://blog.websong.xin'
 })
 
 new Vue({

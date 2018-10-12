@@ -5,7 +5,8 @@ module.exports = {
     types.forEach(type =>
       addStyleResource(config.module.rule('stylus').oneOf(type))
     )
-  }
+  },
+  outputDir: '../home'
 }
 // 定义全局的stylus方法和变量
 function addStyleResource(rule) {
