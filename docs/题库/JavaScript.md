@@ -126,10 +126,9 @@ console.log(obj)
 
 ::: tip 冒泡排序
 
-1. 比较相邻的元素。如果第一个比第二个大，就交换他们两个
-2. 对每一对相邻元素做同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。
-3. 针对所有的元素重复以上的步骤，除了最后一个。
-4. 持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。 
+冒泡排序（Bubble Sort），是一种计算机科学领域的较简单的排序算法。
+
+它重复地走访过要排序的元素列，依次比较两个相邻的元素，如果他们的顺序（如从大到小、首字母从A到Z）错误就把他们交换过来。走访元素的工作是重复地进行直到没有相邻元素需要交换，也就是说该元素已经排序完成。
 
 :::
 
@@ -142,8 +141,10 @@ console.log(obj)
 <template slot="answer">
 
 ```javascript
+/**
+ * 冒泡排序
+ */
 function bubbleSort(arr) {
-  arr = this || arr
   for (let i = 0; i < arr.length - 1; i++) {
     for (let j = 0; j < arr.length - i - 1; j++) {
       [arr[j], arr[j + 1]] =
@@ -153,7 +154,77 @@ function bubbleSort(arr) {
   }
   return arr
 }
-Array.prototype.bubbleSort = bubbleSort
+```
+
+</template>
+</hideShow>
+
+### 选择排序
+
+::: tip 选择排序
+
+选择排序（Selection sort）是一种简单直观的排序算法。它的工作原理是每一次从待排序的数据元素中选出最小（或最大）的一个元素，存放在序列的起始位置，直到全部待排序的数据元素排完。 选择排序是不稳定的排序方法。
+
+:::
+
+<hideShow>
+<template slot="example">
+
+`<无>`
+
+</template>
+<template slot="answer">
+
+```javascript
+/**
+ * 选择排序
+ */
+function selectionSort(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      [arr[i], arr[j]] = arr[i] > arr[j] ? [arr[j], arr[i]] : [arr[i], arr[j]]
+    }
+  }
+  return arr
+}
+```
+
+</template>
+</hideShow>
+
+### 插入排序
+
+::: tip 插入排序
+
+插入排序的基本思想是：每步将一个待排序的记录，按其关键码值的大小插入前面已经排序的文件中适当位置上，直到全部插入完为止。
+
+:::
+
+<hideShow>
+<template slot="example">
+
+`<无>`
+
+</template>
+<template slot="answer">
+
+```javascript
+/**
+ * 插入排序
+ */
+function insertSort(arr) {
+  let tem,j
+  for(let i = 0; i<arr.length; i++){
+    j = i
+    tem = arr[i]
+    while(j>0&& arr[j-1]>tem){
+      arr[j] = arr[j -1]
+      j--
+    }
+    arr[j] = tem
+  }
+  return arr
+}
 ```
 
 </template>
@@ -163,7 +234,7 @@ Array.prototype.bubbleSort = bubbleSort
 
 ::: tip 利用js实现二分查找
 
-*二分查找*又称折半查找,它是一种效率较高的查找方法
+二分查找也称折半查找（Binary Search），它是一种效率较高的查找方法。但是，折半查找要求线性表必须采用顺序存储结构，而且表中元素按关键字有序排列。
 
 :::
 
