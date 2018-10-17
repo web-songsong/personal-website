@@ -230,6 +230,86 @@ function insertSort(arr) {
 </template>
 </hideShow>
 
+### 归并排序
+
+::: tip 归并排序
+
+归并排序（MERGE-SORT）是建立在归并操作上的一种有效的排序算法,该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。将已有序的子序列合并，得到完全有序的序列；即先使每个子序列有序，再使子序列段间有序。若将两个有序表合并成一个有序表，称为二路归并。
+
+:::
+
+<hideShow>
+<template slot="example">
+
+`<无>`
+
+</template>
+<template slot="answer">
+
+```javascript
+/**
+ * 归并排序
+ */
+function mergeSort(arr) {
+  if (arr.length <= 1) return arr
+  const left = mergeSort(arr.splice(0, parseInt(arr.length / 2)))
+  const right = mergeSort(arr)
+  return ((left, right) => {
+    let [l, r, result] = [0, 0, []]
+    while (l < left.length && r < right.length) {
+      if (left[l] < right[r]) {
+        result.push(left[l])
+        l += 1
+      } else {
+        result.push(right[r])
+        r += 1
+      }
+    }
+    result.push(...left.slice(l))
+    result.push(...right.slice(r))
+    return result
+  })(left, right)
+}
+```
+
+</template>
+</hideShow>
+
+### 快速排序
+
+::: tip 快速排序
+
+快速排序（Quicksort）是对冒泡排序的一种改进。通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。
+
+:::
+
+<hideShow>
+<template slot="example">
+
+`<无>`
+
+</template>
+<template slot="answer">
+
+```javascript
+/**
+ * 快速排序
+ */
+function quickSort(arr) {
+  if (arr.length < 2) return arr
+  const baseValue = arr[0]
+  const [less, equal, greater] = [[], [], []]
+  arr.forEach(item => {
+    let n = baseValue - item
+    n == 0 ? equal.push(item) : n > 0 ? less.push(item) : greater.push(item)
+  })
+  return [...quickSort(less), ...equal, ...quickSort(greater)]
+}
+```
+
+</template>
+</hideShow>
+
 ### 二分查找
 
 ::: tip 利用js实现二分查找
