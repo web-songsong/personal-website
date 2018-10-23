@@ -137,7 +137,7 @@ export default {
       text: '关闭状态',
       textStyle: {
         color: 'yellow',
-        fontSize: '25px'
+        fontSize: '24px'
       }
     }
   },
