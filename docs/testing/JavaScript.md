@@ -85,6 +85,65 @@ triangle(15)
 </template>
 </hideShow>
 
+### 两束相加
+
+::: tip 两数相加
+
+给定两个**非空**链表来表示两个非负整数。位数按照**逆序**方式存储，它们的每个节点只存储单个数字。将两数相加返回一个新的链表。
+
+你可以假设除了数字 0 之外，这两个数字都不会以零开头。
+
+:::
+
+<hideShow>
+<template slot="example">
+
+```
+输入：(2 -> 4 -> 3) + (5 -> 6 -> 4)
+输出：7 -> 0 -> 8
+原因：342 + 465 = 807
+```
+
+输入输出格式： （链表）
+
+```javascript
+function ListNode(val) {
+  this.val = val
+  this.next = null
+}
+l1: {"val":2,"next":{"val":4,"next": {"val": 3,"next":null}}}
+l2: {"val":5,"next":{"val":6,"next": {"val": 4,"next":null}}}
+
+输出：{"val":7,"next":{"val":0,"next": {"val": ,"next":null}}}
+
+```
+
+
+
+</template>
+<template slot="answer">
+
+```javascript
+var addTwoNumbers = function(l1, l2, num = 0) {
+  let a = l1.val ? l1.val : 0
+  let b = l2.val ? l2.val : 0
+  let n = a + b + num
+  let node = new ListNode(n % 10)
+  if (!l1.next && !l2.next) {
+    if (n >= 10) {
+      node.next = new ListNode(1)
+    }
+    return node
+  }
+  node.next = addTwoNumbers( l1.next ? l1.next : {}, l2.next ? l2.next : {}, (n>9?1:0))
+  return node
+}
+addTwoNumbers(l1, l2)
+```
+
+</template>
+</hideShow>
+
 ## 经典题目
 
 ### 字符串中每个字符出现次数
