@@ -178,6 +178,45 @@ console.log(obj)
 </template>
 </hideShow>
 
+### 无重复字符的最长子串
+
+::: tip 无重复字符的最长子串
+
+给定一个字符串，找出不含有重复字符的**最长子串**的长度。
+
+:::
+<hideShow>
+<template slot="example">
+
+```
+输入: "abcabcbb"
+输出: 3 
+解释: 无重复字符的最长子串是 "abc"，其长度为 3。
+```
+
+</template>
+<template slot="answer">
+
+```javascript
+const str = 'abcabcd '
+var lengthOfLongestSubstring = function(s) {
+  let max = 0
+  let [l, r] = [0, 0]
+  for (let i = 0; i < s.length; i++) {
+    if (s.slice(l, r).includes(s[i])) l += s.slice(l, r).indexOf(s[i]) + 1
+    r++
+    if (s.slice(l, r).length > max) max = s.slice(l, r).length
+  }
+  return max
+}
+console.log(lengthOfLongestSubstring(str))
+```
+
+</template>
+</hideShow>
+
+## 
+
 ## 算法
 
 ### 冒泡排序
