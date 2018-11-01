@@ -1,6 +1,6 @@
 # autoDeploy
 
-autoDeploy我的个人网站项目，地址链接[charmingsong](https:websong.xin)
+autoDeploy我的个人网站项目，地址链接[charmingsong](https://blog.websong.xin/)
 
 ### server/
 
