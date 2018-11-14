@@ -440,3 +440,88 @@ function findArr(arr, val) {
 
 </template>
 </hideShow>
+
+### 两个排序数组的中位数
+
+::: tip 两个排序数组的中位数
+
+给定两个大小为 m 和 n 的有序数组 **nums1** 和 **nums2** 。
+
+请找出这两个有序数组的中位数。要求算法的时间复杂度为 O(log (m+n)) 。
+
+你可以假设 **nums1** 和 **nums2** 不同时为空。
+
+:::
+<hideShow>
+<template slot="example">
+
+**示例 1:**
+
+```
+nums1 = [1, 3]
+nums2 = [2]
+
+中位数是 2.0
+```
+
+**示例 2:**
+
+```
+nums1 = [1, 2]
+nums2 = [3, 4]
+
+中位数是 (2 + 3)/2 = 2.5
+```
+
+
+
+</template>
+<template slot="answer">
+
+```javascript
+var findMedianSortedArrays = function(nums1, nums2) {
+  var len1 = nums1.length
+  var len2 = nums2.length
+  var len = len1 + len2
+  var zn = len / 2
+  var n1 = len1 / 2
+  var n2 = zn - n1
+  var i1, j1, i2, j2
+  if (n1 % 1 > 0) {
+    i1 = j1 = n1 >> 0
+  } else {
+    i1 = n1 - 1
+    j1 = n1
+  }
+  if (n2 % 1 > 0) {
+    i2 = j2 = n2 >> 0
+  } else {
+    i2 = n2 - 1
+    j2 = n2
+  }
+  return test(i1, j1, i2, j2)
+  function test(i1, j1, i2, j2) {
+    var l1, r1, l2, r2
+    l1 = nums1[i1] || -Infinity
+    r1 = nums1[j1] || Infinity
+    l2 = nums2[i2] || -Infinity
+    r2 = nums2[j2] || Infinity
+    if (l1 > r2) {
+      return test(i1 - 1, i1, j2, j2 + 1)
+    } else if (l2 > r1) {
+      return test(j1, j1 + 1, i2 - 1, i2)
+    } else {
+      if (zn > zn >> 0) {
+        return Math.max(l1, l2)
+      } else {
+        return (Math.max(l1, l2) + Math.min(r1, r2)) / 2
+      }
+    }
+  }
+}
+
+console.log(findMedianSortedArrays([1, 2], [3, 4]))
+```
+
+</template>
+</hideShow>
