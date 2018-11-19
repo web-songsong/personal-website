@@ -2,7 +2,8 @@
   <div class="ScrnOne"
        :class="{ScrnOneAction:isScrnOneAction}">
     <h2 class="ScrnOne_title ">{{message}}</h2>
-    <div class="btn">activate</div>
+    <div class="btn"
+         @click="blogClick">activate</div>
   </div>
 </template>
 <script>
@@ -22,6 +23,11 @@ export default {
     setTimeout(() => {
       this.isScrnOneAction = true
     }, 500)
+  },
+  methods: {
+    blogClick() {
+      location.href = 'https://blog.websong.xin'
+    }
   }
 }
 </script>

@@ -4,7 +4,8 @@
          :class="{isOpacity:isOpacity}"></div>
     <scrnOne class="scrnOne"
              message="charming song" />
-    <div class="menuHome">menu</div>
+    <div class="menuHome"
+         @click="menuClick">menu</div>
   </div>
 </template>
 
@@ -25,6 +26,11 @@ export default {
     setTimeout(() => {
       this.isOpacity = true
     }, 1000)
+  },
+  methods: {
+    menuClick() {
+      console.log('af')
+    }
   }
 }
 </script>
@@ -57,6 +63,7 @@ export default {
   .menuHome
     position absolute
     display flex
+    align-items center
     top 0
     right 0
     color #fff
@@ -71,6 +78,8 @@ export default {
     &:after
       content ''
       display block
-      width 2em
+      width 1.5em
+      height 1.5em
+      margin-left 0.5em
       bgImg('/icon/bars.svg')
 </style>
