@@ -1,3 +1,18 @@
-// rem定义
-r(a)
-  unit((a / 75), rem)
+/*
+ * @Author: charmingsong
+ * @Date: 2018-11-19 18:53:21
+ * @Last Modified by: charmingsong
+ * @Last Modified time: 2018-11-19 20:18:48
+ */
+$imgUrl = '~@/assets/img/'
+
+// 背景引入图片进行初始化设置
+bgImg(img)
+  background-image url($imgUrl + img)
+  background-size 100% 100%
+  background-repeat no-repeat
+
+btn()
+  cursor pointer
+  border-radius 2em
+  text-align center
