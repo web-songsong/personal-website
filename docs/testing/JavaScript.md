@@ -476,6 +476,7 @@ nums2 = [3, 4]
 
 
 </template>
+
 <template slot="answer">
 
 ```javascript

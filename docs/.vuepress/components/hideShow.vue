@@ -1,24 +1,16 @@
 <template>
   <div class="hideShow">
 
-    <div class="example"
-         :class="{isExampleShow: show}">
-      <b>example:</b>
-      <slot name="example"></slot>
-    </div>
-
-    <div class="content"
-         :class="{isShow: show}">
-      <b>answer:</b>
-      <slot name="answer"></slot>
-    </div>
-    <div @click="hideShowFn"
-         class="butText"
-         @blur="blurFn"
-         tabindex="0">
-      <div class="but">{{show?'例子':'答案'}}→ </div>
-    </div>
-
+    <el-collapse v-model="activeNames">
+      <el-collapse-item title="例子"
+                        name="1">
+        <slot name="example"></slot>
+      </el-collapse-item>
+      <el-collapse-item title="答案"
+                        name="2">
+        <slot name="answer"></slot>
+      </el-collapse-item>
+    </el-collapse>
   </div>
 </template>
 <script>
@@ -43,6 +35,7 @@ export default {
 <style lang="stylus" scoped>
 .hideShow
   margin-bottom 3.5rem
+
   .example
     overflow hidden
     // transform-origin 0 0

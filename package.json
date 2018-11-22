@@ -6,8 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
-    "watch": "node_modules/.bin/nodemon server/app.js -i ./src ./docs"
+    "docs:build": "vuepress build docs"
   },
   "dependencies": {
     "style-resources-loader": "^1.2.1",
@@ -20,9 +19,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.5",
     "@vue/cli-service": "^3.0.1",
-    "koa": "^2.5.3",
-    "koa-router": "^7.4.0",
-    "nodemon": "^1.18.4",
+    "element-ui": "^2.4.11",
     "song-vue-template": "^0.1.4",
     "vue-template-compiler": "^2.5.17",
     "vuepress": "^0.14.4"
