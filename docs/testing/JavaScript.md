@@ -215,8 +215,6 @@ console.log(lengthOfLongestSubstring(str))
 </template>
 </hideShow>
 
-## 
-
 ## 算法
 
 ### 冒泡排序
