@@ -15,6 +15,11 @@ module.exports = {
           from: path.join(__dirname, './baidu_verify_lBiznfiSA0.html'),
           to: path.join(__dirname, '../home'),
           ignore: ['.*']
+        },
+        {
+          from: path.join(__dirname, './google0ef37c0281fd9df0.html'),
+          to: path.join(__dirname, '../home'),
+          ignore: ['.*']
         }
       ])
     ]
