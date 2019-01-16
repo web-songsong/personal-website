@@ -8,7 +8,6 @@ Vue.config.productionTip = false
 // router.beforeEach((to, from, next) => {
 //   location.href = 'https://blog.websong.xin'
 // })
-
 new Vue({
   router,
   store,
