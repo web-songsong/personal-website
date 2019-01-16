@@ -9,6 +9,7 @@
     "docs:build": "vuepress build docs"
   },
   "dependencies": {
+    "song-vue-template": "^0.1.8",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
@@ -18,7 +19,6 @@
     "@vue/cli-service": "^3.0.1",
     "copy-webpack-plugin": "^4.6.0",
     "element-ui": "^2.4.11",
-    "song-vue-template": "^0.1.4",
     "style-resources-loader": "^1.2.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
