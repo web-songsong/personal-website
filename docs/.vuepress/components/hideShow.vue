@@ -1,7 +1,7 @@
 <template>
   <div class="hideShow">
 
-    <el-collapse v-model="activeNames">
+    <el-collapse>
       <el-collapse-item title="例子"
                         name="1">
         <slot name="example"></slot>
