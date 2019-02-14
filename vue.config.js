@@ -10,6 +10,7 @@ module.exports = {
   outputDir: '../home',
   configureWebpack: {
     plugins: [
+      // seo
       new copyWebpackPlugin([
         {
           from: path.join(__dirname, './baidu_verify_lBiznfiSA0.html'),
