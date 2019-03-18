@@ -10,7 +10,6 @@
     </svt-drawer>
   </div>
 </template>
-
 <script>
 export default {
   data() {
@@ -32,7 +31,7 @@ export default {
     color #fff
     height 4em
     line-height 4em
-    font-size 0.8em
+    font-size 36px
     letter-spacing 0.225em
     padding 0 1.5em
     text-transform uppercase

@@ -19,9 +19,9 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.5",
     "@vue/cli-service": "^3.0.1",
+    "autoprefixer": "^9.5.0",
     "copy-webpack-plugin": "^4.6.0",
     "element-ui": "^2.4.11",
-    "postcss": "^7.0.14",
     "postcss-px2rem": "^0.3.0",
     "style-resources-loader": "^1.2.1",
     "stylus": "^0.54.5",
@@ -29,11 +29,7 @@
     "vue-template-compiler": "^2.5.17",
     "vuepress": "^0.14.4"
   },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
-  },
+  "postcss": {},
   "browserslist": [
     "> 1%",
     "last 2 versions",

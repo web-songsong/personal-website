@@ -1,12 +1,12 @@
 const path = require('path')
 const copyWebpackPlugin = require('copy-webpack-plugin')
+
 module.exports = {
+  lintOnSave: true,
   css: {
-    extract: false,
     loaderOptions: {
       postcss: {
-        plugins: [require('postcss-px2rem')],
-        remUnit: 75
+        plugins: [require('postcss-px2rem')()]
       }
     }
   },
