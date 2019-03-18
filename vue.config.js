@@ -1,6 +1,15 @@
 const path = require('path')
 const copyWebpackPlugin = require('copy-webpack-plugin')
 module.exports = {
+  css: {
+    extract: false,
+    loaderOptions: {
+      postcss: {
+        plugins: [require('postcss-px2rem')],
+        remUnit: 75
+      }
+    }
+  },
   chainWebpack: config => {
     const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
     types.forEach(type =>

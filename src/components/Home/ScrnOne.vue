@@ -1,5 +1,5 @@
 <template>
-  <div class="ScrnOne"
+  <div class="scrn-one"
        :class="{ScrnOneAction:isScrnOneAction}">
     <h2 class="ScrnOne_title ">{{message}}</h2>
     <div class="btn"
@@ -40,9 +40,14 @@ $pseudo
   background #ffffff
   transition width 1s ease 0.5s
 
-.ScrnOne
+.scrn-one
   box-sizing border-box
-  position relative
+  color #fff
+  min-width 20em
+  position absolute
+  top 50%
+  left 50%
+  transform translate(-50%, -50%)
 
   &:before
     @extend $pseudo

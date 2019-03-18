@@ -10,7 +10,8 @@
     "deploy": "yarn build && yarn docs:build"
   },
   "dependencies": {
-    "song-vue-template": "^0.2.13",
+    "lib-flexible": "^0.3.2",
+    "song-vue-template": "^1.0.5",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
@@ -20,6 +21,8 @@
     "@vue/cli-service": "^3.0.1",
     "copy-webpack-plugin": "^4.6.0",
     "element-ui": "^2.4.11",
+    "postcss": "^7.0.14",
+    "postcss-px2rem": "^0.3.0",
     "style-resources-loader": "^1.2.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
