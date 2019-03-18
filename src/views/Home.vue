@@ -11,28 +11,28 @@
 
 <script>
 // @ is an alias to /src
-import scrnOne from '@/components/Home/ScrnOne.vue'
+import scrnOne from "@/components/Home/ScrnOne.vue";
 export default {
-  name: 'home',
+  name: "home",
   components: {
     scrnOne
   },
   data() {
     return {
       isOpacity: false
-    }
+    };
   },
   mounted() {
     setTimeout(() => {
-      this.isOpacity = true
-    }, 1000)
+      this.isOpacity = true;
+    }, 1000);
   },
   methods: {
     menuClick() {
-      console.log('af')
+      console.log("af");
     }
   }
-}
+};
 </script>
 
 <style lang="stylus" scoped>
@@ -43,7 +43,7 @@ export default {
   bgImg('/home_bg/banner.jpg')
 
   .scrn
-    background #000
+    background #2e3842
     width 100%
     height 100%
     opacity 0.9
