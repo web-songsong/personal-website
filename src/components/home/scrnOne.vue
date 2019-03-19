@@ -90,4 +90,3 @@ $pseudo
   &:before, &:after
     width 100%
 </style>
-

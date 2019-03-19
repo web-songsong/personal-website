@@ -5166,10 +5166,6 @@ lcid@^2.0.0:
   dependencies:
     invert-kv "^2.0.0"
 
-lib-flexible@^0.3.2:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/lib-flexible/-/lib-flexible-0.3.2.tgz#06f5a74832314a2d35c12039bc9c3ca2daeaa426"
-
 linkify-it@^2.0.0:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/linkify-it/-/linkify-it-2.0.3.tgz#d94a4648f9b1c179d64fa97291268bdb6ce9434f"
@@ -7582,11 +7578,10 @@ sockjs@0.3.19:
     faye-websocket "^0.10.0"
     uuid "^3.0.1"
 
-song-vue-template@^1.1.7:
-  version "1.1.7"
-  resolved "https://registry.yarnpkg.com/song-vue-template/-/song-vue-template-1.1.7.tgz#1acf6c16c335e2712bfc3b3677db36fce5215f47"
+song-vue-template@^1.2.7:
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/song-vue-template/-/song-vue-template-1.2.7.tgz#fc9d6d567d1f49403e79f91a28c0833ffb16af02"
   dependencies:
-    lib-flexible "^0.3.2"
     vue "^2.5.17"
 
 sort-keys@^1.0.0:

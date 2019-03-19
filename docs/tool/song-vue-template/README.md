@@ -4,8 +4,6 @@ vue 组件
 
 ## 安装
 
-<svt-button>你好</svt-button>
-
 ```
 yarn add song-vue-template
 // or
@@ -17,7 +15,6 @@ npm i  song-vue-template -S
 1. 在 main.js 文件中写入
 
 ```javascript
-
 import Svt from 'song-vue-template'
 
 Vue.use(Svt)

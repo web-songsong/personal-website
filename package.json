@@ -10,8 +10,7 @@
     "deploy": "yarn build && yarn docs:build"
   },
   "dependencies": {
-    "lib-flexible": "^0.3.2",
-    "song-vue-template": "^1.1.7",
+    "song-vue-template": "^1.2.7",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
