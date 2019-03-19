@@ -7582,9 +7582,9 @@ sockjs@0.3.19:
     faye-websocket "^0.10.0"
     uuid "^3.0.1"
 
-song-vue-template@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/song-vue-template/-/song-vue-template-1.0.6.tgz#7a64dd203dc9a3c0727a6004120aea004e1a9e60"
+song-vue-template@^1.1.7:
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/song-vue-template/-/song-vue-template-1.1.7.tgz#1acf6c16c335e2712bfc3b3677db36fce5215f47"
   dependencies:
     lib-flexible "^0.3.2"
     vue "^2.5.17"
