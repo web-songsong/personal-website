@@ -3,7 +3,7 @@
     <div class="scrn"
          :class="{isOpacity:isOpacity}"></div>
     <scrnOne message="charming song" />
-    <menuList />
+    <!-- <menuList /> -->
   </div>
 </template>
 

@@ -8419,6 +8419,10 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
+vue-create-api@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/vue-create-api/-/vue-create-api-0.2.0.tgz#abeb70ff1af2fa3881f024754d49034a7951c6ef"
+
 vue-hot-reload-api@^2.3.0:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.1.tgz#b2d3d95402a811602380783ea4f566eb875569a2"

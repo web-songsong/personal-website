@@ -4,9 +4,10 @@
          @click="isVisible = !isVisible">
       MENU
     </div>
-    <svt-drawer v-model="isVisible"
-                :hint="false">
-      <div class="menu"></div>
+    <svt-drawer v-model="isVisible">
+      <div class="menu">
+
+      </div>
     </svt-drawer>
   </div>
 </template>
@@ -44,4 +45,7 @@ export default {
       height 1.5em
       margin-left 0.5em
       bgImg('/icon/bars.svg')
+
+  .menu
+    width 800px
 </style>

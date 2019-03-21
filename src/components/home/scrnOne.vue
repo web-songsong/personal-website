@@ -3,7 +3,7 @@
        :class="{ScrnOneAction:isScrnOneAction}">
     <h2 class="ScrnOne_title ">{{message}}</h2>
     <div class="btn"
-         @click="blogClick">activate</div>
+         @click="blogClick">blog</div>
   </div>
 </template>
 <script>

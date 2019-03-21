@@ -24,6 +24,7 @@
     "style-resources-loader": "^1.2.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
+    "vue-create-api": "^0.2.0",
     "vue-template-compiler": "^2.5.17",
     "vuepress": "^0.14.4"
   },
