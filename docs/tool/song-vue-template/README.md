@@ -16,6 +16,7 @@ npm i  song-vue-template -S
 
 ```javascript
 import Svt from 'song-vue-template'
+import 'song-vue-template/dist/css/svt.css'
 
 Vue.use(Svt)
 ```
@@ -28,4 +29,4 @@ Vue.use(Svt)
 
 ## 组件文档
 
-### ☞ [homepage](https://blog.websong.xin/tool/song-vue-template/)
+### ☞ [homepage](https://ui.websong.xin/)
