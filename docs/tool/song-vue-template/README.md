@@ -24,6 +24,7 @@ Vue.use(Svt)
 2. 在开发的 vue 页面中使用`template`
 
 ```
+
 <svt-template/>
 ```
 
