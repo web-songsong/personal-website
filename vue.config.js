@@ -1,13 +1,15 @@
 const path = require('path')
 const copyWebpackPlugin = require('copy-webpack-plugin')
-
+function resolve(dir) {
+  return path.join(__dirname, dir)
+}
 module.exports = {
   lintOnSave: true,
   css: {
     loaderOptions: {
-      postcss: {
-        plugins: [require('postcss-px2rem')({})]
-      }
+      // postcss: {
+      //   plugins: [require('postcss-px2rem')({})]
+      // }
     }
   },
   chainWebpack: config => {
@@ -15,6 +17,7 @@ module.exports = {
     types.forEach(type =>
       addStyleResource(config.module.rule('stylus').oneOf(type))
     )
+    config.resolve.alias.set('components', resolve('src/components'))
   },
   outputDir: '../home',
   configureWebpack: {
