@@ -13,17 +13,13 @@ export default {
   },
   data() {
     return {
-      list: [
-        { uri: 'http://pic.58pic.com/58pic/13/82/74/92q58PICeSI_1024.jpg' },
-        { uri: 'http://pic25.nipic.com/20121117/9252150_165726249000_2.jpg' },
-        { uri: 'http://pic.58pic.com/58pic/13/82/74/92q58PICeSI_1024.jpg' },
-        { uri: 'http://pic25.nipic.com/20121117/9252150_165726249000_2.jpg' },
-        { uri: 'http://pic.58pic.com/58pic/13/82/74/92q58PICeSI_1024.jpg' },
-        { uri: 'http://pic25.nipic.com/20121117/9252150_165726249000_2.jpg' },
-        { uri: 'http://pic.58pic.com/58pic/13/82/74/92q58PICeSI_1024.jpg' },
-        { uri: 'http://pic25.nipic.com/20121117/9252150_165726249000_2.jpg' }
-      ]
+      list: []
     }
+  },
+  mounted() {
+    this.$axios('http://localhost:3000/home/queryList').then(res => {
+      console.log(res)
+    })
   }
 }
 </script>
@@ -35,6 +31,6 @@ export default {
 
   .BaseItem
     height 250px
-    margin 1%
+    margin 0 1% 24px
     flex 0 0 48%
 </style>
