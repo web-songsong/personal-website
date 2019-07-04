@@ -20,3 +20,5 @@ app.on('error', err => {
   console.error('server error', err)
 })
 app.listen(3000)
+
+console.log('server open ok!!')
