@@ -2,11 +2,13 @@
   <div class="List">
     <BaseItem v-for="(item,key) in list"
               :key="key"
+              :text="item.text"
               :uri="item.uri" />
   </div>
 </template>
 <script>
 import { BaseItem } from './common'
+import { mapActions } from 'vuex'
 export default {
   components: {
     BaseItem
@@ -16,10 +18,11 @@ export default {
       list: []
     }
   },
+  methods: {
+    ...mapActions(['home_getList'])
+  },
   mounted() {
-    this.$axios('http://localhost:3000/home/queryList').then(res => {
-      console.log(res)
-    })
+    this.home_getList().then(data => (this.list = data))
   }
 }
 </script>

@@ -2,9 +2,7 @@
   <div class="Header">
     <div class="logo">CS</div>
     <div class="menu">
-      <div class="menu-item">1a;sdfj</div>
-      <div class="menu-item">2qwerqr</div>
-      <div class="menu-item">3ouoiupasdfasdf</div>
+      <div class="menu-item">BLOG</div>
     </div>
   </div>
 </template>

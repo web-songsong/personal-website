@@ -17,7 +17,9 @@ module.exports = {
     types.forEach(type =>
       addStyleResource(config.module.rule('stylus').oneOf(type))
     )
-    config.resolve.alias.set('components', resolve('src/components'))
+    config.resolve.alias
+      .set('components', resolve('src/components'))
+      .set('assets', resolve('src/assets'))
   },
   outputDir: '../home',
   configureWebpack: {

@@ -1,6 +1,7 @@
 <template>
-  <div class="BaseItem">
-    <div class="effect">asdf{{showText}}</div>
+  <div class="BaseItem"
+       @click="jump">
+    <div class="effect">{{text}}</div>
     <img v-lazy="uri">
 
   </div>
@@ -12,7 +13,12 @@ export default {
     /* 图片地址 */
     uri: String,
     /* 显示文字 */
-    showText: String
+    text: String
+  },
+  methods: {
+    jump() {
+      // this.$router.push('/home')
+    }
   }
 }
 </script>
