@@ -6,7 +6,6 @@
     </div>
     <svt-drawer v-model="isVisible">
       <div class="menu">
-
       </div>
     </svt-drawer>
   </div>
