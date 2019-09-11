@@ -53,6 +53,7 @@ module.exports = {
     config.resolve.alias
       .set('utils', resolve('src/assets/utils/'))
       .set('api', resolve('src/modules/API.js'))
+      .set('imgs', resolve('src/assets/imgs/'))
     config.module
       .rule('vue')
       .use('vue-loader')
