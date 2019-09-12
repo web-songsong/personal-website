@@ -1,5 +1,6 @@
 <template>
   <div class="App">
+    <router-link to="/activity">test</router-link>
     <router-view />
   </div>
 </template>
