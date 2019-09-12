@@ -5,16 +5,12 @@ const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const nodeExternals = require('webpack-node-externals')
 const path = require('path')
 const merge = require('lodash.merge')
-
 const TARGET_NODE = process.env.WEBPACK_TARGET === 'node'
 const target = TARGET_NODE ? 'server' : 'client'
 
 const resolve = dir => path.join(__dirname, dir)
 
 module.exports = {
-  css: {
-    extract: false
-  },
   configureWebpack: config => {
     let plugins = [
       TARGET_NODE ? new VueSSRServerPlugin() : new VueSSRClientPlugin()
@@ -31,7 +27,6 @@ module.exports = {
         })
       )
     }
-
     return {
       entry: `./src/entry-${target}.js`,
       devtool: 'none',
@@ -40,7 +35,6 @@ module.exports = {
       output: {
         libraryTarget: TARGET_NODE ? 'commonjs2' : undefined
       },
-
       externals: TARGET_NODE
         ? nodeExternals({
             whitelist: [/\.css$/]
