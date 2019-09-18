@@ -18,6 +18,12 @@ export function createRouter() {
           )
       },
       {
+        path: '/home',
+        name: 'home',
+        component: () =>
+          import(/* webpackChunkName: "home" */ './views/home/home.vue')
+      },
+      {
         path: '/activity/list',
         name: 'activity-list',
         component: () =>

@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    asdfasdf
 
   </div>
 </template>
