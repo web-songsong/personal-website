@@ -6,6 +6,6 @@ const db = mongoose.connection
 
 db.on('error', console.error.bind(console, 'MongoDB 连接错误：'))
 
-mongoose.connect(url, { useNewUrlParser: true })
+mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
 
 module.exports = { template_list }

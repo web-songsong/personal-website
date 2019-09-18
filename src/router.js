@@ -10,10 +10,10 @@ export function createRouter() {
     mode: 'history',
     routes: [
       {
-        path: '/home',
+        path: '/test',
         name: 'home',
         component: () =>
-          import(/* webpackChunkName: "home" */ './views/home/home.vue')
+          import(/* webpackChunkName: "home" */ './views/test/test.vue')
       }
     ]
   })

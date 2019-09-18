@@ -1,10 +1,10 @@
 const Router = require('koa-router')
-const activity = require('./activity/')
+const test = require('./test')
 
 var router = new Router({
   prefix: '/api'
 })
 
-router.use('/activity', activity.routes(), activity.allowedMethods())
+router.use('/test', test.routes(), test.allowedMethods())
 
 module.exports = router

@@ -1,7 +1,4 @@
-import activityEdit from './activity/activity-edit'
-import activityList from './activity/activity-list'
-
+import testVuex from './test/testVuex'
 export default {
-  activityEdit,
-  activityList
+  testVuex
 }

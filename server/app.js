@@ -24,5 +24,5 @@ if (process.env.NODE_ENV === 'production') {
 app.listen(port, () => {
   console.log('server start success')
   let url = `http://localhost:${port}/`
-  opn(url)
+  // opn(url)
 })
