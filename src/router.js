@@ -14,6 +14,10 @@ export function createRouter() {
         name: 'home',
         component: () =>
           import(/* webpackChunkName: "test" */ './views/test/test.vue')
+      },
+      {
+        path: '/',
+        redirect: '/test'
       }
     ]
   })
