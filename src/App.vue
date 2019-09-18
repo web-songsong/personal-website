@@ -4,14 +4,8 @@
   </div>
 </template>
 <script>
-import Nav from '@/components/Nav'
-import Header from '@/components/Header'
-
 export default {
-  components: {
-    Nav,
-    Header
-  },
+  components: {},
   data() {
     return {}
   }

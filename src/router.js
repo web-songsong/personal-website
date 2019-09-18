@@ -10,26 +10,10 @@ export function createRouter() {
     mode: 'history',
     routes: [
       {
-        path: '/activity/edit',
-        name: 'activity-edit',
-        component: () =>
-          import(
-            /* webpackChunkName: "activity-edit" */ './views/activity/activity-edit.vue'
-          )
-      },
-      {
         path: '/home',
         name: 'home',
         component: () =>
           import(/* webpackChunkName: "home" */ './views/home/home.vue')
-      },
-      {
-        path: '/activity/list',
-        name: 'activity-list',
-        component: () =>
-          import(
-            /* webpackChunkName: "activity-list" */ './views/activity/activity-list.vue'
-          )
       }
     ]
   })
