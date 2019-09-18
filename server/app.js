@@ -4,7 +4,6 @@ const static = require('koa-static')
 const koaBody = require('koa-body')
 const router = require('./router/')
 const db = require('./db/')
-const opn = require('opn')
 const { port } = require('../config')
 const { vue_ssr_pro, vue_ssr_dev } = require('./vue-ssr/')
 
@@ -24,5 +23,4 @@ if (process.env.NODE_ENV === 'production') {
 app.listen(port, () => {
   console.log('server start success')
   let url = `http://localhost:${port}/`
-  // opn(url)
 })
