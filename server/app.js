@@ -3,12 +3,11 @@ const Koa = require('koa')
 const static = require('koa-static')
 const koaBody = require('koa-body')
 const router = require('./router/')
-const db = require('./db/')
 const { port } = require('../config')
 const { vue_ssr_pro, vue_ssr_dev } = require('./vue-ssr/')
 
 const app = new Koa()
-app.context.$db = db
+
 app.use(koaBody())
 
 app.use(router.routes()).use(router.allowedMethods())
