@@ -24,16 +24,6 @@ export function createRouter() {
           import(
             /* webpackChunkName: "activity-list" */ './views/activity/activity-list.vue'
           )
-      },
-      {
-        path: '/protocolList',
-        name: 'protocolList',
-        component: () => import('./views/protocol/protocolList.vue')
-      },
-      {
-        path: '/protocolEdit',
-        name: 'protocolEdit',
-        component: () => import('./views/protocol/protocolEdit.vue')
       }
     ]
   })
