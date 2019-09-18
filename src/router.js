@@ -13,7 +13,7 @@ export function createRouter() {
         path: '/test',
         name: 'home',
         component: () =>
-          import(/* webpackChunkName: "home" */ './views/test/test.vue')
+          import(/* webpackChunkName: "test" */ './views/test/test.vue')
       }
     ]
   })

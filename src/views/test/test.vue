@@ -17,7 +17,9 @@ export default {
     })
   },
   methods: {
-    test() {}
+    test() {
+      console.log('xxxx')
+    }
   }
 }
 </script>

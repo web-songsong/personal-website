@@ -1,15 +1,10 @@
 import { createApp } from './main'
 const { app, router, store } = createApp()
 import Vue from 'vue'
-import WangEditor from 'wangeditor'
-Object.defineProperty(Vue.prototype, '$wangEditor', {
-  value: WangEditor
-})
 
 if (window.__INITIAL_STATE__) {
   store.replaceState(window.__INITIAL_STATE__)
 }
-// app.$mount('#app')
 
 router.onReady(() => {
   router.beforeResolve((to, from, next) => {
