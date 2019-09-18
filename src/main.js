@@ -1,18 +1,20 @@
 import Vue from 'vue'
 import App from './App.vue'
-import router from './router'
-import store from './store'
-
-import '@/assets/stylus/reset.styl'
-
-import Svt from 'song-vue-template'
-import 'song-vue-template/dist/css/svt.css'
-
-Vue.config.productionTip = false
-
-Vue.use(Svt)
-new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount('#app')
+import { createRouter } from './router'
+import { createStore } from './store'
+import axios from 'utils/axios'
+import { sync } from 'vuex-router-sync'
+import './assets/css/reset.css'
+import './assets/css/overall.css'
+Vue.prototype.$axios = axios
+export function createApp() {
+  const router = createRouter()
+  const store = createStore()
+  sync(store, router)
+  const app = new Vue({
+    router,
+    store,
+    render: h => h(App)
+  })
+  return { app, router, store }
+}
