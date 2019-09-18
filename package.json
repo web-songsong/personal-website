@@ -11,7 +11,7 @@
     "node:server": "NODE_ENV=production node server/app.js",
     "start": "npm run build:ssr && npm run node:server",
     "dev": "node server/app.js",
-    "server": "nodemon server/app.js"
+    "server": "NODE_ENV=production nodemon server/app.js"
   },
   "dependencies": {
     "axios": "^0.19.0",
