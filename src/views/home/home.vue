@@ -1,12 +1,17 @@
 <template>
   <div class="home">
-    asdfasdf
-    asdf
+    <button @click="test">test</button>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  methods: {
+    test() {
+      console.log('xxx')
+    }
+  }
+}
 </script>
 
 <style lang="less" scoped>
