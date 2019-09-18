@@ -10,6 +10,5 @@ export default {}
 
 <style lang="less" scoped>
 .test {
-  color: red;
 }
 </style>

@@ -4,6 +4,8 @@ import { createRouter } from './router'
 import { createStore } from './store'
 import axios from 'utils/axios'
 import { sync } from 'vuex-router-sync'
+import './assets/css/reset.css'
+import './assets/css/overall.css'
 Vue.prototype.$axios = axios
 export function createApp() {
   const router = createRouter()
