@@ -1,0 +1,37 @@
+{
+  "rests": {
+    "title": "组件样式",
+    "data": [
+      {
+        "title": "背景",
+        "data": [
+          {
+            "title": "背景颜色",
+            "name": "backgroundColor",
+            "type": "color",
+            "default": "yellow"
+          }
+        ]
+      }
+    ]
+  },
+  "propsData": {
+    "title": "组件数据",
+    "data": [
+      {
+        "title": "内容",
+        "data": [
+          {
+            "title": "文本",
+            "name": "text",
+            "default": "button"
+          },
+          {
+            "title": "跳转链接",
+            "name": "url"
+          }
+        ]
+      }
+    ]
+  }
+}

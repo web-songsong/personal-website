@@ -1,0 +1,55 @@
+{
+  "list": [
+    {
+      "title": "基础配置",
+      "content": [
+        {
+          "title": "协议名称",
+          "type": "input",
+          "key": "name",
+          "placeHolder": "请输入协议名称",
+          "mandatory": true
+        },
+        {
+          "title": "协议标题",
+          "type": "input",
+          "key": "urlTitle",
+          "defValue": "urlVal",
+          "placeHolder": "请输入协议标题",
+          "mandatory": true
+        },
+        {
+          "title": "地址参数",
+          "type": "input",
+          "key": "params",
+          "placeHolder": "请输入协议地址参数，逗号分隔"
+        }
+      ]
+    },
+    {
+      "title": "组件配置",
+      "content": [
+        {
+          "title": "使用接口",
+          "type": "switch",
+          "key": "useApi",
+          "children": [
+            {
+              "title": "接口地址",
+              "type": "input",
+              "key": "apiUrl",
+              "placeHolder": ""
+            },
+            {
+              "title": "接口参数",
+              "type": "input",
+              "key": "cParams",
+              "placeHolder": "请输入接口参数字段，逗号分隔"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+
+}

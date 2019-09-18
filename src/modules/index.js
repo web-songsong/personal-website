@@ -1,4 +1,7 @@
-import activity from './activity'
+import activityEdit from './activity/activity-edit'
+import activityList from './activity/activity-list'
+
 export default {
-  activity
+  activityEdit,
+  activityList
 }

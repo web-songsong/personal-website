@@ -1,0 +1,19 @@
+[
+  {
+    "name": "基础组件",
+    "template": [
+      {
+        "t_name": "按钮",
+        "t_vue_name": "buttonWrap"
+      },
+      {
+        "t_name": "text",
+        "t_vue_name": "textWrap"
+      },
+      {
+        "t_name": "imgWrap",
+        "t_vue_name": "imgWrap"
+      }
+    ]
+  }
+]

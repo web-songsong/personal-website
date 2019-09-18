@@ -3,19 +3,13 @@ const Koa = require('koa')
 const static = require('koa-static')
 const koaBody = require('koa-body')
 const router = require('./router/')
-const compress = require('koa-compress')
+const db = require('./db/')
+const opn = require('opn')
+const { port } = require('../config')
 const { vue_ssr_pro, vue_ssr_dev } = require('./vue-ssr/')
 
 const app = new Koa()
-app.use(
-  compress({
-    filter: function(content_type) {
-      return /text/i.test(content_type)
-    },
-    threshold: 2048,
-    flush: require('zlib').Z_SYNC_FLUSH
-  })
-)
+app.context.$db = db
 app.use(koaBody())
 
 app.use(router.routes()).use(router.allowedMethods())
@@ -27,6 +21,8 @@ if (process.env.NODE_ENV === 'production') {
 } else {
   app.use(vue_ssr_dev(app))
 }
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log('server start success')
+  let url = `http://localhost:${port}/`
+  opn(url)
 })

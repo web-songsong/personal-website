@@ -1,0 +1,152 @@
+{
+  "facade": {
+    "title": "基础设置",
+    "data": [
+      {
+        "title": "组件顺序",
+        "data": [
+          {
+            "title": "向上移动",
+            "type": "button",
+            "name": "top"
+          },
+          {
+            "title": "向下移动",
+            "type": "button",
+            "name": "bottom"
+          }
+        ]
+      },
+      {
+        "title": "组件大小",
+        "data": [
+          {
+            "title": "宽度",
+            "name": "width",
+            "default": "100%"
+          },
+
+          {
+            "title": "高度",
+            "name": "height",
+            "default": "组件默认"
+          },
+          {
+            "title": "背景",
+            "name": "backgroundColor",
+            "type": "color"
+          }
+        ]
+      },
+      {
+        "title": "组件位置",
+        "data": [
+          {
+            "title": "定位方式",
+            "name": "position",
+            "type": "select",
+            "options": [
+              {
+                "value": "absolute",
+                "label": "绝对定位"
+              },
+              {
+                "value": "relative",
+                "label": "相对定位"
+              }
+            ],
+            "data": [
+              {
+                "title": "上",
+                "name": "top",
+                "default": "默认"
+              },
+              {
+                "title": "下",
+                "name": "bottom",
+                "default": "默认"
+              },
+              {
+                "title": "左",
+                "name": "left",
+                "default": "默认"
+              },
+              {
+                "title": "右",
+                "name": "right",
+                "default": "默认"
+              }
+            ],
+            "default": "相对定位"
+          }
+        ]
+      },
+
+      {
+        "title": "外边距",
+        "data": [
+          {
+            "title": "上",
+            "name": "marginTop",
+            "default": "0px"
+          },
+          {
+            "title": "下",
+            "name": "marginBottom",
+            "default": "0px"
+          },
+          {
+            "title": "左",
+            "name": "marginLeft",
+            "default": "0px"
+          },
+          {
+            "title": "右",
+            "name": "marginRight",
+            "default": "0px"
+          }
+        ]
+      },
+      {
+        "title": "内边距",
+        "data": [
+          {
+            "title": "上",
+            "name": "paddingTop",
+            "default": "0px"
+          },
+          {
+            "title": "下",
+            "name": "paddingBottom",
+            "default": "0px"
+          },
+          {
+            "title": "左",
+            "name": "paddingLeft",
+            "default": "0px"
+          },
+          {
+            "title": "右",
+            "name": "paddingRight",
+            "default": "0px"
+          }
+        ]
+      },
+      {
+        "title": "背景",
+        "data": [
+          {
+            "title": "背景颜色",
+            "type": "color",
+            "name": "backgroundColor"
+          },
+          {
+            "title": "背景图片",
+            "type": "img",
+            "name": "backgroundImage"
+          }
+        ]
+      }
+    ]
+  }
+}

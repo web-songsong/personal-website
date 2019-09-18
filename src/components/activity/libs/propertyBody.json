@@ -1,0 +1,21 @@
+{
+  "bodyStyle": {
+    "title": "全局样式",
+    "data": [
+      {
+        "title": "背景",
+        "data": [
+          {
+            "title": "背景颜色",
+            "name": "backgroundColor",
+            "type": "color"
+          },
+          {
+            "title": "背景图片",
+            "type": "img"
+          }
+        ]
+      }
+    ]
+  }
+}

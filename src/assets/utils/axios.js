@@ -1,5 +1,6 @@
 import axios from 'axios'
-axios.defaults.baseURL = `/api`
+import { port } from '../../../config.json'
+axios.defaults.baseURL = `http://localhost:${port}/api`
 
 axios.interceptors.request.use(
   config => {

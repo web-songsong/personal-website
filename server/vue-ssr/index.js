@@ -3,7 +3,7 @@ const LRU = require('lru-cache')
 const path = require('path')
 const resolve = file => path.resolve(__dirname, file)
 const { createBundleRenderer } = require('vue-server-renderer')
-const templatePath = path.join(__dirname, '../../public/index.template.html')
+const templatePath = path.join(__dirname, '../../index.template.html')
 
 function createRenderer(bundle, options) {
   return createBundleRenderer(
