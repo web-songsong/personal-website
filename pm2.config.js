@@ -6,9 +6,7 @@ module.exports = {
       cwd: './', // 当前工作路径
       watch: [
         // 监控变化的目录，一旦变化，自动重启
-        'src',
-        'dist',
-        'server'
+        'dist'
       ],
       ignore_watch: [
         // 忽视这些目录的变化
