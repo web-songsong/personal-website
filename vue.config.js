@@ -46,6 +46,7 @@ module.exports = {
       plugins
     }
   },
+
   chainWebpack: config => {
     config.resolve.alias
       .set('utils', resolve('src/assets/utils/'))
@@ -60,7 +61,15 @@ module.exports = {
         })
       })
   },
+
   filenameHashing: false,
   css: {},
-  indexPath: 'spa'
+  indexPath: 'spa',
+
+  pluginOptions: {
+    'style-resources-loader': {
+      preProcessor: 'less',
+      patterns: [resolve(__dirname, './src/assets/css/animation.less')]
+    }
+  }
 }
