@@ -11,13 +11,19 @@ export function createRouter() {
     routes: [
       {
         path: '/test',
-        name: 'home',
+        name: 'test',
         component: () =>
           import(/* webpackChunkName: "test" */ './views/test/test.vue')
       },
       {
+        path: '/home',
+        name: 'home',
+        component: () =>
+          import(/* webpackChunkName: "home" */ './views/home/home.vue')
+      },
+      {
         path: '/',
-        redirect: '/test'
+        redirect: '/home'
       }
     ]
   })
