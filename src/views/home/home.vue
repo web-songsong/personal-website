@@ -1,7 +1,8 @@
 <template>
   <div class="home">
     <intro-wrap :show="introVisible" />
-    <div class="test"></div>
+    <div class="test">
+    </div>
   </div>
 </template>
 
@@ -18,7 +19,10 @@ export default {
   methods: {
     /*     监听滚动条， 隐藏/展示 introWrap */
     HandleintroWrapScroll() {
-      let osTop = document.documentElement.scrollTop || document.body.srcollTop
+      let osTop =
+        document.documentElement.scrollTop ||
+        window.pageYOffset ||
+        document.body.scrollTop
       if (osTop > 300) {
         this.introVisible = false
       } else {
