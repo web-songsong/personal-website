@@ -69,7 +69,7 @@ module.exports = {
   pluginOptions: {
     'style-resources-loader': {
       preProcessor: 'less',
-      patterns: [resolve(__dirname, './src/assets/css/animation.less')]
+      patterns: [path.resolve(__dirname, 'src/assets/css/animation.less')]
     }
   }
 }

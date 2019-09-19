@@ -25,16 +25,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-// .opacity-show();
-.opacity-show-enter-active,
-.opacity-show-leave-active {
-  transition: all 1s;
-}
-.opacity-show-enter, .opacity-show-leave-to /* .intro-leave-active below version 2.1.8 */ {
-  opacity: 0;
-  transform: translatey(30px);
-}
-
+.opacity-show();
 .intro-wrap {
   height: 100vh;
   box-sizing: border-box;

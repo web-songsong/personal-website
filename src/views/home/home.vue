@@ -1,7 +1,8 @@
 <template>
   <div class="home">
-    <!-- <button @click="introVisible = !introVisible">test</button> -->
     <intro-wrap :show="introVisible" />
+
+    test
   </div>
 </template>
 
