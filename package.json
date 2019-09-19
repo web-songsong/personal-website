@@ -9,8 +9,7 @@
     "dev": "node server/app.js",
     "node:server": "NODE_ENV=production node server/app.js",
     "server": "NODE_ENV=production nodemon server/app.js",
-    "start": "npm run build:ssr && npm run node:server",
-    "pm2:start": "git pull && cnpm i && npm run build:ssr"
+    "start": "npm run build:ssr && npm run node:server"
   },
   "dependencies": {
     "axios": "^0.19.0",
