@@ -1,7 +1,9 @@
 <template>
   <div class="intro-wrap">
-    <transition name="opacity-show">
+    <transition name="opacity-show"
+                mode="out-in">
       <div class="intro"
+           key="intro-text"
            v-if="show">
 
         <p class="intro-title">THIS IS <br> MASSIVELY</p>
@@ -9,9 +11,22 @@
           A free, fully responsive HTML5 + CSS3 site template designed by HTML5 UP
           and distributed by cssmoban.
         </p>
+        <div class="icon-img"
+             @click="downwardIcon">
+          <img src="@/assets/images/home/bottom-icon.png">
+        </div>
 
       </div>
+
+      <div class="intro"
+           v-if="infoTitle"
+           key="intro-info">
+        <div class="info-title">
+          massively
+        </div>
+      </div>
     </transition>
+
   </div>
 
 </template>
@@ -20,6 +35,22 @@
 export default {
   props: {
     show: Boolean
+  },
+  data() {
+    return {
+      infoTitle: false
+    }
+  },
+  methods: {
+    downwardIcon() {
+      console.log('downwardIcon')
+    }
+  },
+  computed: {},
+  watch: {
+    show(val) {
+      this.infoTitle = !val
+    }
   }
 }
 </script>
@@ -31,7 +62,7 @@ export default {
   box-sizing: border-box;
   .intro {
     color: #fff;
-    padding: 350px 48px;
+    padding: 400px 48px;
     text-align: center;
     .intro-title {
       font-family: 'Source Sans Pro', Helvetica, sans-serif;
@@ -54,6 +85,32 @@ export default {
       @media screen and (max-width: 915px) {
         font-size: 14.66px;
         line-height: 30px;
+      }
+    }
+    .icon-img {
+      width: 64px;
+      height: 64px;
+      margin: 40px auto 0;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .info-title {
+      font-family: 'Source Sans Pro', Helvetica, sans-serif;
+      width: 260px;
+      height: 78px;
+      line-height: 78px;
+      font-size: 30px;
+      font-weight: 900;
+      color: #fff;
+      margin: 280px auto 0;
+      border: 5px solid #fff;
+      @media screen and (max-width: 915px) {
+        width: 200px;
+        font-size: 21px;
+        height: 60px;
+        line-height: 60px;
       }
     }
   }

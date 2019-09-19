@@ -1,8 +1,7 @@
 <template>
   <div class="home">
     <intro-wrap :show="introVisible" />
-
-    test
+    <div class="test"></div>
   </div>
 </template>
 
@@ -16,10 +15,25 @@ export default {
       introVisible: false
     }
   },
+  methods: {
+    /*     监听滚动条， 隐藏/展示 introWrap */
+    HandleintroWrapScroll() {
+      let osTop = document.documentElement.scrollTop || document.body.srcollTop
+      if (osTop > 300) {
+        this.introVisible = false
+      } else {
+        this.introVisible = true
+      }
+    }
+  },
   mounted() {
     setTimeout(() => {
       this.introVisible = true
     }, 2000)
+
+    window.onscroll = evnet => {
+      this.HandleintroWrapScroll()
+    }
   }
 }
 </script>
@@ -29,5 +43,9 @@ export default {
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
+}
+.test {
+  height: 3000px;
+  background: rgba(200, 100, 30, 0.3);
 }
 </style>
