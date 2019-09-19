@@ -6,7 +6,7 @@
            key="intro-text"
            v-if="show">
 
-        <p class="intro-title">THIS IS <br> MASSIVELY</p>
+        <p class="intro-title">charmingsong<br>website</p>
         <p class="intro-docs">
           A free, fully responsive HTML5 + CSS3 site template designed by HTML5 UP
           and distributed by cssmoban.

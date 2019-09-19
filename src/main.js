@@ -10,6 +10,13 @@ Vue.prototype.$axios = axios
 export function createApp() {
   const router = createRouter()
   const store = createStore()
+  router.beforeEach((to, from, next) => {
+    /* 路由发生变化修改页面title */
+    if (to.meta.title) {
+      document.title = to.meta.title
+    }
+    next()
+  })
   sync(store, router)
   const app = new Vue({
     router,
