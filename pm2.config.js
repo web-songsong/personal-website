@@ -7,20 +7,21 @@ module.exports = {
       watch: [
         // 监控变化的目录，一旦变化，自动重启
         'src',
-        'server',
+        'dist',
+        'server'
       ],
       ignore_watch: [
         // 忽视这些目录的变化
-        'node_modules',
+        'node_modules'
       ],
       node_args: '--harmony', // node的启动模式
       env: {
-        NODE_ENV: 'production', // 设置运行环境，此时process.env.NODE_ENV的值就是development
+        NODE_ENV: 'production' // 设置运行环境，此时process.env.NODE_ENV的值就是development
       },
       env_production: {
-        NODE_ENV: 'production',
+        NODE_ENV: 'production'
       },
-      log_date_format: 'YYYY-MM-DD HH:mm Z',
-    },
-  ],
-};
+      log_date_format: 'YYYY-MM-DD HH:mm Z'
+    }
+  ]
+}
