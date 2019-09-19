@@ -3,6 +3,7 @@ import App from './App.vue'
 import { createRouter } from './router'
 import { createStore } from './store'
 import axios from 'utils/axios'
+import $ from 'jquery'
 import { sync } from 'vuex-router-sync'
 import './assets/css/reset.css'
 Vue.prototype.$axios = axios

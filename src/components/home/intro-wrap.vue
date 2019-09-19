@@ -12,6 +12,7 @@
           and distributed by cssmoban.
         </p>
         <div class="icon-img"
+             ref="introSign"
              @click="downwardIcon">
           <img src="@/assets/images/home/bottom-icon.png">
         </div>
@@ -21,7 +22,8 @@
       <div class="intro"
            v-if="infoTitle"
            key="intro-info">
-        <div class="info-title">
+        <div class="info-title"
+             id="info-title">
           massively
         </div>
       </div>
@@ -43,7 +45,12 @@ export default {
   },
   methods: {
     downwardIcon() {
-      console.log('downwardIcon')
+      $('html, body').animate(
+        {
+          scrollTop: $(this.$refs.introSign).offset().top - 50
+        },
+        1000
+      )
     }
   },
   computed: {},
@@ -60,9 +67,13 @@ export default {
 .intro-wrap {
   height: 100vh;
   box-sizing: border-box;
+  position: relative;
   .intro {
     color: #fff;
-    padding: 400px 48px;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translatex(-50%);
     text-align: center;
     .intro-title {
       font-family: 'Source Sans Pro', Helvetica, sans-serif;
@@ -72,7 +83,7 @@ export default {
       margin: 0 0 24px 0;
       line-height: 73px;
       @media screen and (max-width: 915px) {
-        font-size: 47.66px;
+        font-size: 38px;
         line-height: 52px;
       }
     }

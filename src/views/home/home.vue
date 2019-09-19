@@ -33,7 +33,7 @@ export default {
   mounted() {
     setTimeout(() => {
       this.introVisible = true
-    }, 2000)
+    }, 1500)
 
     window.onscroll = evnet => {
       this.HandleintroWrapScroll()

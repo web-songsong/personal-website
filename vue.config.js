@@ -3,6 +3,7 @@ const VueSSRServerPlugin = require('vue-server-renderer/server-plugin')
 const VueSSRClientPlugin = require('vue-server-renderer/client-plugin')
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const nodeExternals = require('webpack-node-externals')
+const webpack = require('webpack')
 const path = require('path')
 const merge = require('lodash.merge')
 
@@ -14,8 +15,14 @@ const resolve = dir => path.join(__dirname, dir)
 module.exports = {
   configureWebpack: config => {
     let plugins = [
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+        'windows.jQuery': 'jquery'
+      }),
       TARGET_NODE ? new VueSSRServerPlugin() : new VueSSRClientPlugin()
     ]
+
     if (isProduction) {
       config.plugins.push(
         new CompressionWebpackPlugin({
