@@ -2,15 +2,15 @@
   <div class="home">
     <intro-wrap :show="introVisible"
                 ref="introWrap" />
-    <div class="test">
-    </div>
+    <homeContentVue />
   </div>
 </template>
 
 <script>
 export default {
   components: {
-    introWrap: () => import('@/components/home/intro-wrap.vue')
+    introWrap: () => import('@/components/home/intro-wrap.vue'),
+    homeContentVue: () => import('@/components/home/home-content.vue')
   },
   data() {
     return {
@@ -60,9 +60,5 @@ export default {
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
-}
-.test {
-  height: 3000px;
-  background: rgba(200, 100, 30, 0.3);
 }
 </style>

@@ -8,8 +8,7 @@
            v-if="show">
         <p class="intro-title">charmingsong<br>website</p>
         <p class="intro-docs">
-          A free, fully responsive HTML5 + CSS3 site template designed by HTML5 UP
-          and distributed by cssmoban.
+          One needs 3 things to be truly happy living in the world: some thing to do, some one to love, some thing to hope for.
         </p>
         <div class="icon-img"
              ref="introSign"
