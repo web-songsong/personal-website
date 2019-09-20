@@ -4,8 +4,8 @@
                 mode="out-in">
       <div class="intro"
            key="intro-text"
+           ref="intro"
            v-if="show">
-
         <p class="intro-title">charmingsong<br>website</p>
         <p class="intro-docs">
           A free, fully responsive HTML5 + CSS3 site template designed by HTML5 UP

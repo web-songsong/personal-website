@@ -1,6 +1,7 @@
 <template>
   <div class="home">
-    <intro-wrap :show="introVisible" />
+    <intro-wrap :show="introVisible"
+                ref="introWrap" />
     <div class="test">
     </div>
   </div>
@@ -13,7 +14,8 @@ export default {
   },
   data() {
     return {
-      introVisible: false
+      introVisible: false,
+      introTop: 0
     }
   },
   methods: {
@@ -23,21 +25,32 @@ export default {
         document.documentElement.scrollTop ||
         window.pageYOffset ||
         document.body.scrollTop
-      if (osTop > 300) {
+      if (osTop > this.introTop) {
         this.introVisible = false
       } else {
         this.introVisible = true
       }
+    },
+    setIntroTop() {
+      this.$nextTick(() => {
+        this.introTop = $(this.$refs.introWrap.$refs.intro).offset().top
+      })
     }
   },
   mounted() {
     setTimeout(() => {
       this.introVisible = true
+      this.setIntroTop()
     }, 1500)
 
     window.onscroll = evnet => {
       this.HandleintroWrapScroll()
     }
+    $(window).resize(() => {
+      if (this.$refs.introWrap.$refs.intro) {
+        this.introTop = $(this.$refs.introWrap.$refs.intro).offset().top
+      }
+    })
   }
 }
 </script>
