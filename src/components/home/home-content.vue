@@ -28,7 +28,7 @@ export default {
     return {
       barList: [
         {
-          title: 'home'
+          title: 'test'
         },
         {
           title: 'test'
