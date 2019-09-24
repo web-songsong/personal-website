@@ -32,7 +32,8 @@ export default {
         {
           title: 'charmingsong-cli',
           content:
-            '一个利用ts开发的的快速拉取目标模板的脚手架。快速搭建出你想要的项目雏形。'
+            '一个利用ts开发的的快速拉取目标模板的脚手架。快速搭建出你想要的项目雏形。',
+          href: 'https://github.com/web-songsong/charmingsong-cli'
         }
       ]
     }
@@ -40,7 +41,7 @@ export default {
   methods: {
     handleJump(item) {
       if (item.href) {
-        Location.href = item.href
+        window.open(item.href)
       } else {
         alert('目标文档还在努力描述')
       }
