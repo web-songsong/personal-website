@@ -34,6 +34,12 @@ export default {
           content:
             '一个利用ts开发的的快速拉取目标模板的脚手架。快速搭建出你想要的项目雏形。',
           href: 'https://github.com/web-songsong/charmingsong-cli'
+        },
+        {
+          title: 'song-vue-template',
+          content:
+            '使用组件 Demo 快速体验交互细节；使用前端框架封装的代码帮助工程师快速开发。',
+          href: 'https://ui.websong.xin'
         }
       ]
     }
