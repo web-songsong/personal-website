@@ -2,17 +2,19 @@
 <template>
   <div class="home-content">
     <div class="item-wrap"
+         @click="handleJump(item)"
          v-for="(item,key) in barList"
          :key="key">
       <div class="img-wrap">
         <img src="@/assets/images/pic06.jpg">
-        <div class="shade"></div>
-
+        <div class="shade">
+          <img src="@/assets/images/home/link-img.png">
+        </div>
       </div>
       <div class="content">
         <div class="content-title">{{item.title}}</div>
         <div class="content-sketch">
-          Suspendisse porttitor sapien ac lectus euismod imperdiet. Curabitur nec nibh at massa pellentesque accumsan eu id nibh. Donec accumsan ut mi et tincidunt. Aliquam eget metus nec leo tempor bibendum. Phasellus tincidunt lobortis metus. Duis euismod lorem turpis at diam. Suspendisse porttitor sapien ac lectus euismod imperdiet. Curabitur nec nibh at massa pellentesque accumsan eu id nibh. Donec accumsan ut mi et tincidunt. Aliquam eget metus nec leo tempor bibendum. Phasellus tincidunt lobortis metus. Duis euismod lorem turpis at diam. Suspendisse porttitor sapien ac lectus euismod imperdiet. Curabitur nec nibh at massa pellentesque accumsan eu id nibh. Donec accumsan ut mi et tincidunt. Aliquam eget metus nec leo tempor bibendum. Phasellus tincidunt lobortis metus. Duis euismod lorem turpis at diam. Suspendisse porttitor sapien ac lectus euismod imperdiet. Curabitur nec nibh at massa pellentesque accumsan eu id nibh. Donec accumsan ut mi et tincidunt. Aliquam eget metus nec leo tempor bibendum. Phasellus tincidunt lobortis metus. Duis euismod lorem turpis at diam.
+          {{item.content}}
         </div>
       </div>
       <div class="tail">
@@ -28,27 +30,20 @@ export default {
     return {
       barList: [
         {
-          title: 'test'
-        },
-        {
-          title: 'test'
-        },
-        {
-          title: 'test'
-        },
-        {
-          title: 'test'
-        },
-        {
-          title: 'test'
-        },
-        {
-          title: 'test'
-        },
-        {
-          title: 'test'
+          title: 'charmingsong-cli',
+          content:
+            '一个利用ts开发的的快速拉取目标模板的脚手架。快速搭建出你想要的项目雏形。'
         }
       ]
+    }
+  },
+  methods: {
+    handleJump(item) {
+      if (item.href) {
+        Location.href = item.href
+      } else {
+        alert('目标文档还在努力描述')
+      }
     }
   }
 }
@@ -56,6 +51,7 @@ export default {
 
 <style lang="less" scoped>
 .home-content {
+  cursor: pointer;
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -87,6 +83,13 @@ export default {
         background: rgba(35, 182, 182, 0.4);
         opacity: 0;
         transition: opacity 1s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+          width: 75px;
+          height: 75px;
+        }
         @media screen and (min-width: 735px) {
           &:hover {
             opacity: 1;
