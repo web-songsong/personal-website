@@ -109,19 +109,17 @@ export default {
       width: 100%;
       max-height: 350px;
       background: rgba(20, 225, 225, 0.5);
-      padding: 10px 30px 50px;
+      padding: 10px 30px 10px;
       overflow: hidden;
       color: #2f1616;
 
-      @media screen and (max-width: 735px) {
-        display: none;
-      }
       .content-title {
         font-family: 'Playfair Display', serif;
         font-size: 28px;
         line-height: 35px;
       }
       .content-sketch {
+        margin-bottom: 40px;
         line-height: 21px;
         font-size: 15px;
         font-family: Arial, Helvetica, sans-serif;
@@ -130,6 +128,9 @@ export default {
         display: -webkit-box;
         -webkit-line-clamp: 9;
         -webkit-box-orient: vertical;
+        @media screen and (max-width: 735px) {
+          display: none;
+        }
       }
     }
     .tail {
