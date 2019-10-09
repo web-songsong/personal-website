@@ -2,6 +2,7 @@
   <div id="app">
     <div class="app">
       <div class="shade"></div>
+
       <router-view />
     </div>
   </div>
