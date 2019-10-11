@@ -13,7 +13,7 @@
         <div class="icon-img"
              ref="introSign"
              @click="downwardIcon">
-          <img src="@/assets/images/home/bottom-icon.png" alt="">
+          <img src="@/assets/images/home/bottom-icon.png"   alt="">
         </div>
       </div>
 
@@ -31,32 +31,33 @@
 </template>
 
 <script>
-  export default {
-    props: {
-      show: Boolean
-    },
-    data() {
-      return {
-        infoTitle: false
-      }
-    },
-    methods: {
-      downwardIcon() {
-        $('html, body').animate(
-          {
-            scrollTop: $(this.$refs.introSign).offset().top - 50
-          },
-          1000
-        )
-      }
-    },
-    computed: {},
-    watch: {
-      show(val) {
-        this.infoTitle = !val
-      }
+  
+
+    export default {
+        props: {
+            show: Boolean
+        },
+        data() {
+            return {
+                infoTitle: false,
+                imgtest
+            }
+        },
+        methods: {
+            downwardIcon() {
+                $('html, body').animate(
+                    {scrollTop: $(this.$refs.introSign).offset().top - 50},
+                    1000
+                )
+            }
+        },
+        computed: {},
+        watch: {
+            show(val) {
+                this.infoTitle = !val
+            }
+        }
     }
-  }
 </script>
 
 <style lang="less"
