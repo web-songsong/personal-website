@@ -3,7 +3,6 @@
     <transition name="opacity-show"
                 mode="out-in">
       <div class="intro"
-           key="intro-text"
            ref="intro"
            v-if="show">
         <p class="intro-title">charmingsong<br>website</p>
@@ -14,14 +13,12 @@
         <div class="icon-img"
              ref="introSign"
              @click="downwardIcon">
-          <img src="@/assets/images/home/bottom-icon.png">
+          <img src="@/assets/images/home/bottom-icon.png" alt="">
         </div>
-
       </div>
 
       <div class="intro"
-           v-if="infoTitle"
-           key="intro-info">
+           v-if="infoTitle">
         <div class="info-title"
              id="info-title">
           massively
