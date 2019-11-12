@@ -18,6 +18,7 @@ function createRenderer(bundle, options) {
     })
   )
 }
+
 function renderToString(content, renderer) {
   return new Promise((resolve, reject) => {
     renderer.renderToString(content, (err, html) => {

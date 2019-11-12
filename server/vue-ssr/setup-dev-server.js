@@ -13,7 +13,8 @@ const serverConfig = require('@vue/cli-service/webpack.config')
 const readFile = (fs, file) => {
   try {
     return fs.readFileSync(path.join(clientConfig.output.path, file), 'utf-8')
-  } catch (e) {}
+  } catch (e) {
+  }
 }
 
 module.exports = function setupDevServer(app, templatePath, cb) {
@@ -71,7 +72,7 @@ module.exports = function setupDevServer(app, templatePath, cb) {
 
   // hot middleware
   app.use(
-    require('koa-webpack-hot-middleware')(clientCompiler, { heartbeat: 5000 })
+    require('./koa-webpack-hot-middleware')(clientCompiler, {heartbeat: 5000})
   )
 
   // watch and update server renderer
