@@ -54,12 +54,12 @@ module.exports = function setupDevServer(app, templatePath, cb) {
 
   // dev middleware
   const clientCompiler = webpack(clientConfig)
-  const devMiddleware = require('koa-webpack-dev-middleware')(clientCompiler, {
+  const devMiddleware = require('./koa-webpack-dev-middleware')(clientCompiler, {
     publicPath: clientConfig.output.publicPath,
     noInfo: true
   })
   app.use(devMiddleware)
-  clientCompiler.plugin('done', stats => {
+  clientCompiler.hooks.done.tap('test', stats => {
     stats = stats.toJson()
     stats.errors.forEach(err => console.error(err))
     stats.warnings.forEach(err => console.warn(err))
@@ -69,10 +69,20 @@ module.exports = function setupDevServer(app, templatePath, cb) {
     )
     update()
   })
+  // clientCompiler.plugin('done', stats => {
+  //   stats = stats.toJson()
+  //   stats.errors.forEach(err => console.error(err))
+  //   stats.warnings.forEach(err => console.warn(err))
+  //   if (stats.errors.length) return
+  //   clientManifest = JSON.parse(
+  //     readFile(devMiddleware.fileSystem, 'vue-ssr-client-manifest.json')
+  //   )
+  //   update()
+  // })
 
   // hot middleware
   app.use(
-    require('./koa-webpack-hot-middleware')(clientCompiler, {heartbeat: 5000})
+    require('./koa-webpack-hot-middleware')(clientCompiler, { log: false, heartbeat: 5000 })
   )
 
   // watch and update server renderer

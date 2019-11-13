@@ -13,26 +13,27 @@ const target = TARGET_NODE ? 'server' : 'client'
 const resolve = dir => path.join(__dirname, dir)
 
 module.exports = {
+
   configureWebpack: config => {
     let plugins = [
       new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery',
-        'windows.jQuery': 'jquery'
-      }),
+                                  $: 'jquery',
+                                  jQuery: 'jquery',
+                                  'windows.jQuery': 'jquery'
+                                }),
       TARGET_NODE ? new VueSSRServerPlugin() : new VueSSRClientPlugin()
     ]
 
     if (isProduction) {
       config.plugins.push(
         new CompressionWebpackPlugin({
-          // 正在匹配需要压缩的文件后缀
-          test: /\.(js|css|svg|woff|ttf|json|html)$/,
-          // 大于10kb的会压缩
-          threshold: 10240,
-          // 其余配置查看compression-webpack-plugin
-          deleteOriginalAssets: false
-        })
+                                       // 正在匹配需要压缩的文件后缀
+                                       test: /\.(js|css|svg|woff|ttf|json|html)$/,
+                                       // 大于10kb的会压缩
+                                       threshold: 10240,
+                                       // 其余配置查看compression-webpack-plugin
+                                       deleteOriginalAssets: false
+                                     })
       )
     }
 
@@ -44,11 +45,10 @@ module.exports = {
       output: {
         libraryTarget: TARGET_NODE ? 'commonjs2' : undefined
       },
-
       externals: TARGET_NODE
         ? nodeExternals({
-            whitelist: [/\.css$/]
-          })
+                          whitelist: [/\.css$/]
+                        })
         : undefined,
       plugins
     }
@@ -56,19 +56,18 @@ module.exports = {
 
   chainWebpack: config => {
     config.resolve.alias
-      .set('utils', resolve('src/assets/utils/'))
-      .set('api', resolve('src/modules/API.js'))
+          .set('utils', resolve('src/assets/utils/'))
+          .set('api', resolve('src/modules/API.js'))
     config.module
-      .rule('vue')
-      .use('vue-loader')
-      .tap(options => {
-        merge(options, {
-          optimizeSSR: false,
-          extractCSS: true
-        })
-      })
+          .rule('vue')
+          .use('vue-loader')
+          .tap(options => {
+            merge(options, {
+              optimizeSSR: false,
+              extractCSS: true
+            })
+          })
   },
-
   filenameHashing: false,
   css: {},
   indexPath: 'spa',

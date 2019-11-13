@@ -18,18 +18,6 @@
         introTop: 0
       }
     },
-    methods: {
-      /*     监听滚动条， 隐藏/展示 introWrap */
-      HandleintroWrapScroll() {
-        let osTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop
-        this.introVisible = osTop <= this.introTop
-      },
-      setIntroTop() {
-        this.$nextTick(() => {
-          this.introTop = $(this.$refs.introWrap.$refs.intro).offset().top
-        })
-      }
-    },
     mounted() {
       setTimeout(() => {
         this.introVisible = true
@@ -44,6 +32,18 @@
           this.introTop = $(this.$refs.introWrap.$refs.intro).offset().top
         }
       })
+    },
+    methods: {
+      /*     监听滚动条， 隐藏/展示 introWrap */
+      HandleintroWrapScroll() {
+        let osTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop
+        this.introVisible = osTop <= this.introTop
+      },
+      setIntroTop() {
+        this.$nextTick(() => {
+          this.introTop = $(this.$refs.introWrap.$refs.intro).offset().top
+        })
+      }
     }
   }
 </script>

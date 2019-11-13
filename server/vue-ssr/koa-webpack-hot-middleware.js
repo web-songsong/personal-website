@@ -1,24 +1,20 @@
-var webpackHotMiddleware = require('webpack-hot-middleware')
+const webpackHotMiddleware = require('webpack-hot-middleware')
+const { PassThrough } = require('stream')
 
-function middleware(doIt, req, res) {
-  var originalEnd = res.end
-  return function (done) {
-    res.end = function () {
-      originalEnd.apply(this, arguments)
-      done(null, 0)
-    }
-    doIt(req, res, function () {
-      done(null, 1)
-    })
-  }
-}
-
-module.exports = function (compiler, option) {
+module.exports = (compiler, option) => {
   var action = webpackHotMiddleware(compiler, option)
-  return function* (next) {
-    var nextStep = yield middleware(action, this.req, this.res)
-    if (nextStep && next) {
-      yield* next
-    }
+  return async (ctx, next) => {
+    let stream = new PassThrough()
+    ctx.body = stream
+    await action(ctx.req, {
+      write: stream.write.bind(stream),
+      writeHead(status, headers) {
+        ctx.status = status
+        ctx.set(headers)
+      },
+      end(content) {
+        ctx.body = content
+      },
+    }, next)
   }
 }
