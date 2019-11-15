@@ -3,6 +3,7 @@ const path = require('path')
 const MFS = require('memory-fs')
 const webpack = require('webpack')
 const chokidar = require('chokidar')
+const { port } = require('../../config')
 
 const clientConfig = require('@vue/cli-service/webpack.config')
 process.env.WEBPACK_TARGET = 'node'
@@ -56,7 +57,9 @@ module.exports = function setupDevServer(app, templatePath, cb) {
   const clientCompiler = webpack(clientConfig)
   const devMiddleware = require('./koa-webpack-dev-middleware')(clientCompiler, {
     publicPath: clientConfig.output.publicPath,
-    noInfo: true
+    noInfo: true,
+    logLevel: 'warn',
+    reporter: () => console.log(`http://localhost:${port}/`)
   })
   app.use(devMiddleware)
   clientCompiler.hooks.done.tap('test', stats => {
@@ -69,16 +72,6 @@ module.exports = function setupDevServer(app, templatePath, cb) {
     )
     update()
   })
-  // clientCompiler.plugin('done', stats => {
-  //   stats = stats.toJson()
-  //   stats.errors.forEach(err => console.error(err))
-  //   stats.warnings.forEach(err => console.warn(err))
-  //   if (stats.errors.length) return
-  //   clientManifest = JSON.parse(
-  //     readFile(devMiddleware.fileSystem, 'vue-ssr-client-manifest.json')
-  //   )
-  //   update()
-  // })
 
   // hot middleware
   app.use(

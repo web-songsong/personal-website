@@ -17,23 +17,23 @@ module.exports = {
   configureWebpack: config => {
     let plugins = [
       new webpack.ProvidePlugin({
-                                  $: 'jquery',
-                                  jQuery: 'jquery',
-                                  'windows.jQuery': 'jquery'
-                                }),
+        $: 'jquery',
+        jQuery: 'jquery',
+        'windows.jQuery': 'jquery' 
+      }),
       TARGET_NODE ? new VueSSRServerPlugin() : new VueSSRClientPlugin()
     ]
 
     if (isProduction) {
       config.plugins.push(
         new CompressionWebpackPlugin({
-                                       // 正在匹配需要压缩的文件后缀
-                                       test: /\.(js|css|svg|woff|ttf|json|html)$/,
-                                       // 大于10kb的会压缩
-                                       threshold: 10240,
-                                       // 其余配置查看compression-webpack-plugin
-                                       deleteOriginalAssets: false
-                                     })
+          // 正在匹配需要压缩的文件后缀
+          test: /\.(js|css|svg|woff|ttf|json|html)$/,
+          // 大于10kb的会压缩
+          threshold: 10240,
+          // 其余配置查看compression-webpack-plugin
+          deleteOriginalAssets: false
+        })
       )
     }
 
@@ -47,8 +47,8 @@ module.exports = {
       },
       externals: TARGET_NODE
         ? nodeExternals({
-                          whitelist: [/\.css$/]
-                        })
+          whitelist: [/\.css$/]
+        })
         : undefined,
       plugins
     }
