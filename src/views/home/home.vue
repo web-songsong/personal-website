@@ -1,16 +1,22 @@
 <template>
   <div class="home">
+    <wrapBorder></wrapBorder>
     <introWrap :show="introVisible"
-                ref="introWrap"/>
-    <homeContentVue/>
+               ref="introWrap"/>
+    <homeContent></homeContent>
   </div>
 </template>
 
 <script>
+  import homeContent from '@/components/home/home-content'
+  import introWrap from '@/components/home/intro-wrap'
+  import wrapBorder from '@/components/home/wrap-border.vue'
+
   export default {
     components: {
-      introWrap: () => import('@/components/home/intro-wrap.vue'),
-      homeContentVue: () => import('@/components/home/home-content.vue')
+      introWrap,
+      homeContent,
+      wrapBorder
     },
     data() {
       return {
@@ -24,7 +30,7 @@
         this.setIntroTop()
       }, 1500)
 
-      window.onscroll = evnet => {
+      window.onscroll = () => {
         this.HandleintroWrapScroll()
       }
       $(window).resize(() => {

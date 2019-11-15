@@ -7,13 +7,14 @@
            v-if="show">
         <p class="intro-title">charmingsong<br>website</p>
         <p class="intro-docs">
-          One needs 3 things to be truly happy living in the world: some thing to do, some one to love, some thing to
+          One needs 3 things to be truly happy living in the world: some thing to do, some one to
+          love, some thing to
           hope for.
         </p>
         <div class="icon-img"
              ref="introSign"
              @click="downwardIcon">
-          <img src="@/assets/images/home/bottom-icon.png"
+          <img :src="downArrows"
                alt="">
         </div>
       </div>
@@ -32,6 +33,8 @@
 </template>
 
 <script>
+  import downArrows from '@/assets/images/home/bottom-icon.png'
+
   export default {
     props: {
       show: Boolean
@@ -39,12 +42,13 @@
     data() {
       return {
         infoTitle: false,
+        downArrows
       }
     },
     methods: {
       downwardIcon() {
         $('html, body').animate(
-          {scrollTop: $(this.$refs.introSign).offset().top - 50},
+          { scrollTop: $(this.$refs.introSign).offset().top - 50 },
           1000
         )
       }

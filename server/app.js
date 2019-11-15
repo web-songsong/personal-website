@@ -19,4 +19,6 @@ if (process.env.NODE_ENV === 'production') {
 } else {
   app.use(vue_ssr_dev(app))
 }
-app.listen(port)
+app.listen(port, () => {
+  console.log('success!!!')
+})
