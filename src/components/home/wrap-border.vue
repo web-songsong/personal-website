@@ -31,12 +31,13 @@
       background: url('../../assets/images/home/border.svg') repeat-x 50% 50%;
     }
 
-    .border {
+    .bottom {
       bottom: 0;
       left: 0;
       height: 20px;
       width: 100%;
       top: auto;
+      transform: rotateX(180deg);
       background: url('../../assets/images/home/border.svg') repeat-x 50% 50%;
     }
 
@@ -53,6 +54,7 @@
       top: 0;
       width: 20px;
       height: 100%;
+      transform: rotateY(180deg);
       background: url('../../assets/images/home/border-vert.svg') repeat-y 50% 50%;
     }
 
