@@ -7,9 +7,7 @@
            v-if="show">
         <p class="intro-title">charmingsong<br>website</p>
         <p class="intro-docs">
-          One needs 3 things to be truly happy living in the world: some thing to do, some one to
-          love, some thing to
-          hope for.
+          Cause morning rolls around and it's another day of sun.
         </p>
         <div class="icon-img"
              ref="introSign"
