@@ -3,8 +3,54 @@
   .opacity-show-leave-active {
     transition: all 0.5s;
   }
+
   .opacity-show-enter, .opacity-show-leave-to /* .intro-leave-active below version 2.1.8 */ {
     opacity: 0;
-    transform: translatey(30px);
+    transform: translateY(30px);
   }
+}
+
+.text-animation {
+  @keyframes scratchy {
+    0% {
+      background-position: 0 0;
+    }
+
+    25% {
+      background-position: 0 0;
+    }
+
+    26% {
+      background-position: 20px -20px;
+    }
+
+    50% {
+      background-position: 20px -20px;
+    }
+
+    51% {
+      background-position: 40px -40px;
+    }
+
+    75% {
+      background-position: 40px -40px;
+    }
+
+    76% {
+      background-position: 60px -60px;
+    }
+
+    99% {
+      background-position: 60px -60px;
+    }
+
+    100% {
+      background-position: 0 0;
+    }
+  }
+  background: url("~@/assets/images/home/repeat-white.png") center center repeat;
+  background-clip: text;
+  color: transparent;
+  animation: scratchy 0.253s linear forwards infinite;
+  -webkit-text-fill-color: transparent;
 }

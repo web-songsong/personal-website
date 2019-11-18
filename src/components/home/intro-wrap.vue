@@ -48,7 +48,7 @@
     methods: {
       downwardIcon() {
         $('html, body').animate(
-          { scrollTop: $(this.$refs.introSign).offset().top - 50 },
+          {scrollTop: $(this.$refs.introSign).offset().top - 50},
           1000
         )
       }
@@ -64,6 +64,7 @@
 
 <style lang="less"
        scoped>
+
   .opacity-show();
   .intro-wrap {
     height: 100vh;
@@ -85,6 +86,7 @@
         font-weight: 900;
         margin: 0 0 24px 0;
         line-height: 73px;
+        .text-animation();
         @media screen and (max-width: 915px) {
           font-size: 38px;
           line-height: 52px;

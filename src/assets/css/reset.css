@@ -123,4 +123,6 @@ table {
 }
 body {
   background-color: #ffffff;
+  box-sizing: border-box;
+  padding: 20px;
 }

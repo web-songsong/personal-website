@@ -10,7 +10,7 @@
 <script>
   import homeContent from '@/components/home/home-content'
   import introWrap from '@/components/home/intro-wrap'
-  import wrapBorder from '@/components/home/wrap-border.vue'
+  import wrapBorder from '@/components/home/wrap-border'
 
   export default {
     components: {
