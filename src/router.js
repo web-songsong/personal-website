@@ -18,7 +18,7 @@ export function createRouter() {
           import(/* webpackChunkName: "test" */ './views/test/test.vue')
       },
       {
-        path: '/home',
+        path: '/',
         name: 'home',
         meta: {
           title: '首页'
