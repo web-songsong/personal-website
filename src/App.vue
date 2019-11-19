@@ -2,14 +2,28 @@
   <div id="app">
     <div class="app">
       <div class="shade"></div>
-
+      <wrapBorder></wrapBorder>
+      <svt-gsap @runMain="runMain"></svt-gsap>
       <router-view/>
     </div>
   </div>
 </template>
 
 <script>
-  export default {}
+  import wrapBorder from '@/components/common/wrap-border'
+
+  export default {
+    components: {
+      wrapBorder
+    },
+    methods: {
+      runMain(fn) {
+        setTimeout(() => {
+          fn()
+        }, 1000)
+      }
+    },
+  }
 </script>
 <style lang="less"
        scoped>
