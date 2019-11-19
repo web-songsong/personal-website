@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <wrapBorder></wrapBorder>
     <introWrap :show="introVisible"
                ref="introWrap"/>
     <homeContent></homeContent>
@@ -10,13 +9,11 @@
 <script>
   import homeContent from '@/components/home/home-content'
   import introWrap from '@/components/home/intro-wrap'
-  import wrapBorder from '@/components/home/wrap-border'
 
   export default {
     components: {
       introWrap,
       homeContent,
-      wrapBorder
     },
     data() {
       return {
@@ -28,7 +25,7 @@
       setTimeout(() => {
         this.introVisible = true
         this.setIntroTop()
-      }, 1500)
+      }, 4500)
 
       window.onscroll = () => {
         this.HandleintroWrapScroll()
