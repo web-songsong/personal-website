@@ -36,9 +36,9 @@
         barList: [
           {
             title: 'charmingsong blog',
-            imgUrl: '',
+            imgUrl: 'https://blog.websong.xin/img/bg.jpg',
             content: '生活需要文字添加色彩',
-            // href: 'https://github.com/web-songsong/charmingsong-cli'
+            href: 'https://blog.websong.xin/'
           },
           // {
           //   title: 'song-vue-template',
@@ -79,11 +79,11 @@
       width: 300px;
       clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
       overflow: hidden;
-
+      
       .img-wrap {
-        height: 225px;
+        height: 200px;
         position: relative;
-
+        
         img {
           width: 100%;
           height: 100%;
