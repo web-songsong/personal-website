@@ -5,9 +5,11 @@
          v-for="(item,key) in barList"
          :key="key">
       <div class="img-wrap">
-        <img src="@/assets/images/pic06.jpg">
+        <img :src="item.imgUrl || defaultImg"
+             :alt="item.title">
         <div class="shade">
-          <img src="@/assets/images/home/link-img.png">
+          <img src="@/assets/images/home/link-img.png"
+               alt="">
 
         </div>
       </div>
@@ -25,22 +27,25 @@
 </template>
 
 <script>
+  import defaultImg from '@/assets/images/pic06.jpg'
+
   export default {
     data() {
       return {
+        defaultImg,
         barList: [
           {
-            title: 'charmingsong-cli',
-            content:
-              '一个利用ts开发的的快速拉取目标模板的脚手架。快速搭建出你想要的项目雏形。',
-            href: 'https://github.com/web-songsong/charmingsong-cli'
+            title: 'charmingsong blog',
+            imgUrl: '',
+            content: '生活需要文字添加色彩',
+            // href: 'https://github.com/web-songsong/charmingsong-cli'
           },
-          {
-            title: 'song-vue-template',
-            content:
-              '使用组件 Demo 快速体验交互细节；使用前端框架封装的代码帮助工程师快速开发。',
-            href: 'https://ui.websong.xin'
-          }
+          // {
+          //   title: 'song-vue-template',
+          //   content:
+          //     '使用组件 Demo 快速体验交互细节；使用前端框架封装的代码帮助工程师快速开发。',
+          //   href: 'https://ui.websong.xin'
+          // }
         ]
       }
     },
