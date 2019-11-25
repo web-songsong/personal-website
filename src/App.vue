@@ -3,7 +3,8 @@
     <div class="app">
       <div class="shade"></div>
       <wrapBorder></wrapBorder>
-      <svt-gsap @runMain="runMain"></svt-gsap>
+      <svt-gsap class="svt-gsap"
+                @runMain="runMain"></svt-gsap>
       <router-view/>
     </div>
   </div>
@@ -46,6 +47,9 @@
       @media screen and (max-width: 915px) {
         background-size: auto, auto, auto 175%;
       }
+    }
+    .svt-gsap {
+      position: absolute;
     }
   }
 </style>

@@ -11,11 +11,9 @@ export default {
   name: 'test-test',
   methods: {
     handleTest() {
-      console.log('asdf')
     }
   },
   mounted() {
-    console.log('asdf')
   }
 }
 </script>

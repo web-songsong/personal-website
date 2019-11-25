@@ -7009,10 +7009,10 @@ sockjs@0.3.19:
     faye-websocket "^0.10.0"
     uuid "^3.0.1"
 
-song-vue-template@^1.4.1:
-  version "1.4.1"
-  resolved "https://registry.npm.taobao.org/song-vue-template/download/song-vue-template-1.4.1.tgz#866dbdaef762106edf1c4af16270fef37ef51f9b"
-  integrity sha1-hm29rvdiEG7fHErxYnD+8371H5s=
+song-vue-template@^1.4.3:
+  version "1.4.3"
+  resolved "https://registry.npm.taobao.org/song-vue-template/download/song-vue-template-1.4.3.tgz?cache=0&sync_timestamp=1574653836209&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fsong-vue-template%2Fdownload%2Fsong-vue-template-1.4.3.tgz#345556dd22095faaa1b8c9ea7f3c6e26f1a9400a"
+  integrity sha1-NFVW3SIJX6qhuMnqfzxuJvGpQAo=
   dependencies:
     gsap "^3.0.1"
     vue "^2.5.17"
