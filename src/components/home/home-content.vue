@@ -40,12 +40,12 @@
             content: '生活需要文字添加色彩',
             href: 'https://blog.websong.xin/'
           },
-          // {
-          //   title: 'song-vue-template',
-          //   content:
-          //     '使用组件 Demo 快速体验交互细节；使用前端框架封装的代码帮助工程师快速开发。',
-          //   href: 'https://ui.websong.xin'
-          // }
+          {
+            title: 'song-vue-template',
+            content: '基于vue的个人ui组件库',
+            imgUrl: 'http://ww1.sinaimg.cn/large/8449ed5dly1g9a9vqqityj206o050q2r.jpg',
+            href: 'https://ui.websong.xin'
+          }
         ]
       }
     },
@@ -79,11 +79,11 @@
       width: 300px;
       clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
       overflow: hidden;
-      
+
       .img-wrap {
         height: 200px;
         position: relative;
-        
+
         img {
           width: 100%;
           height: 100%;
