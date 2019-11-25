@@ -52,7 +52,7 @@ function vue_ssr_dev(app) {
   })
   return async ctx => {
     const content = {
-      title: 'test',
+      title: 'dev title',
       url: ctx.url
     }
     ctx.body = await renderToString(content, renderer)
