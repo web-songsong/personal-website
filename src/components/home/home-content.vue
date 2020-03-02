@@ -43,7 +43,7 @@
           {
             title: 'song-vue-template',
             content: '基于vue的个人ui组件库',
-            imgUrl: 'https://ws1.sinaimg.cn/large/8449ed5dly1g9v4v2k5p2j206o050q2r.jpg',
+            imgUrl: 'https://ui.websong.xin/bg.jpg',
             href: 'https://ui.websong.xin/'
           }
         ]
