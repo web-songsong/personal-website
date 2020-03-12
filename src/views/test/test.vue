@@ -8,7 +8,7 @@
 <script>
 import { mapState } from 'vuex'
 export default {
-  asyncData({ store, route }) {
+  asyncData({ store }) {
     store.dispatch('vuex_tets', { test: 'xxxxx' })
   },
   computed: {
@@ -18,7 +18,6 @@ export default {
   },
   methods: {
     test() {
-      console.log('xxxx')
     }
   }
 }

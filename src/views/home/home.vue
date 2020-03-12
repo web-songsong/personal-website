@@ -2,18 +2,20 @@
   <div class="home">
     <introWrap :show="introVisible"
                ref="introWrap"/>
-    <homeContent></homeContent>
+    <homeContent/>
+    <putOnRecords/>
   </div>
 </template>
 
 <script>
   import homeContent from '@/components/home/home-content'
   import introWrap from '@/components/home/intro-wrap'
+  import putOnRecords from '@/components/common/put-on-records'
 
   export default {
     components: {
       introWrap,
-      homeContent,
+      homeContent, putOnRecords
     },
     data() {
       return {
@@ -58,4 +60,6 @@
     position: relative;
     overflow: hidden;
   }
+
+
 </style>
